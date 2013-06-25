@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_tweets</name>
+	<author>Bruno Batista</author>
+	<creationDate>Jun 2013</creationDate>
+	<copyright>Copyright (C) 2013 AtomTech, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>bruno@atomtech.com.br</authorEmail>
+	<authorUrl>http://www.atomtech.com.br</authorUrl>
+	<version>1.0</version>
+	<description>MOD_TWEETS_XML_DESCRIPTION</description>
+	<scriptfile />
+	<files>
+		<filename module="mod_tweets">mod_tweets.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_tweets.xml</filename>
+		<folder>libraries</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_tweets.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_tweets.sys.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_tweets.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_tweets.sys.ini</language>
+	</languages>
+	<config>
+		<fields
+			name="params">
+			<fieldset
+				name="oauth"
+				label="MOD_TWEETS_FIELDSET_OAUTH_LABEL"
+				description="MOD_TWEETS_FIELDSET_OAUTH_DESC">
+				<field
+					name="consumer_key"
+					type="text"
+					size="40"
+					class="inputbox"
+					required="true"
+					label="MOD_TWEETS_FIELD_CONSUMER_KEY_LABEL"
+					description="MOD_TWEETS_FIELD_CONSUMER_KEY_DESC" />
+				<field
+					name="consumer_secret"
+					type="text"
+					size="40"
+					class="inputbox"
+					required="true"
+					label="MOD_TWEETS_FIELD_CONSUMER_SECRET_LABEL"
+					description="MOD_TWEETS_FIELD_CONSUMER_SECRET_DESC" />
+				<field
+					name="access_token"
+					type="text"
+					size="40"
+					class="inputbox"
+					required="true"
+					label="MOD_TWEETS_FIELD_ACCESS_TOKEN_LABEL"
+					description="MOD_TWEETS_FIELD_ACCESS_TOKEN_DESC" />
+				<field
+					name="access_secret"
+					type="text"
+					size="40"
+					class="inputbox"
+					required="true"
+					label="MOD_TWEETS_FIELD_ACCESS_SECRET_LABEL"
+					description="MOD_TWEETS_FIELD_ACCESS_SECRET_DESC" />
+			</fieldset>
+			<fieldset
+				name="basic">
+				<field
+					name="type"
+					type="list"
+					default="1"
+					class="inputbox"
+					size="1"
+					filter="integer"
+					label="MOD_TWEETS_FIELD_TYPE_LABEL"
+					description="MOD_TWEETS_FIELD_TYPE_DESC">
+					<option value="1">MOD_TWEETS_OPTION_TIMELINE</option>
+					<option value="0">MOD_TWEETS_OPTION_SEARCH</option>
+				</field>
+				<field
+					name="username"
+					type="text"
+					default="joomla"
+					size="40"
+					class="inputbox"
+					label="MOD_TWEETS_FIELD_USERNAME_LABEL"
+					description="MOD_TWEETS_FIELD_USERNAME_DESC" />
+				<field
+					name="query"
+					type="text"
+					default="joomla"
+					size="40"
+					class="inputbox"
+					label="MOD_TWEETS_FIELD_QUERY_LABEL"
+					description="MOD_TWEETS_FIELD_QUERY_DESC" />
+				<field
+					name="count"
+					type="integer"
+					default="5"
+					first="1"
+					last="10"
+					step="1"
+					label="MOD_TWEETS_FIELD_COUNT_LABEL"
+					description="MOD_TWEETS_FIELD_COUNT_DESC" />
+				<field
+					name="avatar_size"
+					type="text"
+					default="35"
+					size="40"
+					class="inputbox input-mini"
+					label="MOD_TWEETS_FIELD_AVATAR_SIZE_LABEL"
+					description="MOD_TWEETS_FIELD_AVATAR_SIZE_DESC" />
+				<field
+					name="link_target"
+					type="list"
+					default="_blank"
+					class="inputbox"
+					filter="string"
+					label="MOD_TWEETS_FIELD_LINK_TARGET_LABEL"
+					description="MOD_TWEETS_FIELD_LINK_TARGET_DESC">
+					<option value="_blank">MOD_TWEETS_OPTION_NEW</option>
+					<option value="_self">MOD_TWEETS_OPTION_PARENT</option>
+				</field>
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option value="itemid" />
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
